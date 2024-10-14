@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="F:/ITI Content/17- PROJECTS/RestAssured-Restful-Booker-Api">
+        <classes>
+
+            <class name="com.herokuapp.booker.restful.PingTest">
+                <methods>
+                    <include name="verifyOnline"/>
+                </methods>
+            </class>
+
+            <class name="com.herokuapp.booker.restful.AuthenticationTest">
+                <methods>
+                    <include name="verifyValidAuthentication"/>
+                    <include name="verifyInvalidAPassword"/>
+                    <include name="verifyInvalidAUsername"/>
+                </methods>
+            </class>
+
+            <class name="com.herokuapp.booker.restful.CreateBookingTest"><methods>
+                <include name="verifyValidCreation"/>
+                <include name="verifyInvalidCreationFirstNameNotString"/>
+                <include name="verifyInvalidCreationLastNameNotString"/>
+                <include name="verifyInvalidCreationTotalPriceBoolean"/>
+                <include name="verifyInvalidCreationDateInteger"/>
+            </methods>
+            </class>
+
+            <class name="com.herokuapp.booker.restful.GetIDsTest">
+                <methods>
+                    <include name="verifyValidGetIDs"/>
+                </methods>
+            </class>
+
+            <class name="com.herokuapp.booker.restful.GetDetailsByIDsTest">
+                <methods>
+                    <include name="verifyValidGetBookingDetailsByID"/>
+                    <include name="verifyInvalidGetBookingDetailsByNonExistID"/>
+                </methods>
+            </class>
+
+            <class name="com.herokuapp.booker.restful.UpdateBookingTest">
+                <methods>
+                    <include name="verifyValidUpdate"/>
+                </methods>
+            </class>
+
+            <class name="com.herokuapp.booker.restful.DeleteTest"><methods>
+                <include name="verifyValidDeleteID"/>
+                <include name="verifyInvalidDeleteID"/>
+            </methods>
+            </class>
+
+            <class name="com.herokuapp.booker.restful.EndToEndTest">
+                <methods>
+                    <include name="verifyEndToEndValidScenario"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

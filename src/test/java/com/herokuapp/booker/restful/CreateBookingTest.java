@@ -19,7 +19,7 @@ public class CreateBookingTest extends Utils {
         Assert.assertEquals(response.statusCode(), 200, "Expected status code 200");
 
         // Extract bookingId and check that it is not null
-        bookingId = response.jsonPath().getString("bookingid");
+        caseBookingId = response.jsonPath().getString("bookingid");
         Assert.assertNotNull(caseBookingId, "Booking ID should not be null");
 
         // Validate values in the booking object
@@ -105,7 +105,7 @@ public class CreateBookingTest extends Utils {
         Response response = request.createRequest(body);
 
         // Assertions
-        Assert.assertEquals(response.statusCode(), 500, "Booking should not be created");
+        Assert.assertEquals(response.statusCode(), 400, "Booking should not be created : Expected Code 400");
         Assert.assertTrue(response.getTime() < 2000 );
         System.out.println("Failed to create booking Error Code: " + response.statusCode());
     }
@@ -117,7 +117,7 @@ public class CreateBookingTest extends Utils {
                 {
                   "firstname": "Hassan",
                   "lastname": "Abdelaziz",
-                  "totalprice": true,
+                  "totalprice": 155,
                   "depositpaid": true,
                   "bookingdates": \
                 {

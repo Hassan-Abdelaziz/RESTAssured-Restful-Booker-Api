@@ -34,7 +34,7 @@ public class AuthenticationTest extends Utils {
         // Assertions
         Assert.assertTrue(response.asString().contains("Bad credentials"));
         Assert.assertTrue(response.getTime() < 2000 );
-        Assert.assertEquals(response.statusCode(), 401, "Expected status code 200");
+        Assert.assertEquals(response.statusCode(), 401, "Unauthorized request : Expected status code 401");
         System.out.println("Invalid auth test passed with status: " + response.statusCode());
     }
 
@@ -47,7 +47,7 @@ public class AuthenticationTest extends Utils {
         // Assertions
         Assert.assertTrue(response.asString().contains("Bad credentials"));
         Assert.assertTrue(response.getTime() < 2000 );
-        Assert.assertEquals(response.statusCode(), 401, "Expected status code 200");
+        Assert.assertEquals(response.statusCode(), 401, "Unauthorized request : Expected status code 401");
         System.out.println("Invalid auth test passed with status: " + response.statusCode());
     }
 }
