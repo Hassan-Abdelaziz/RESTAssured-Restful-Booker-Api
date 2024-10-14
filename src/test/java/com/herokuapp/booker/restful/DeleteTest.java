@@ -13,7 +13,7 @@ public class DeleteTest extends Utils {
     public void verifyValidDeleteID(){
         request = new DeleteRequest();
 
-        Response response = request.deleteBooking("1");
+        Response response = request.deleteBooking(caseBookingId);
 
         // Assertions
         Assert.assertEquals(response.statusCode(), 201, "Expected status code 201");
